@@ -1,0 +1,44 @@
+# tempo
+
+**Safety-proportional process for agentic SDLC.** Trivial changes skip ceremony;
+risky changes earn it.
+
+This is the namespace and landing repo for the `tempo` Claude Code plugin. The
+plugin is developed and released through the
+[VibeKit plugin marketplace](https://github.com/shrwnsan/vibekit-claude-plugins)
+— canonical source:
+[`plugins/tempo`](https://github.com/shrwnsan/vibekit-claude-plugins/tree/main/plugins/tempo).
+
+## Install
+
+```
+claude plugin install https://github.com/shrwnsan/vibekit-claude-plugins
+```
+
+## What it does
+
+- A ~10-line routing table injected once per session — not a philosophy lecture
+- Every task tiers **0 / 1 / 2** by risk; tier 0 usually loads nothing at all
+- Tier 1: one-line plan note, test-first, single agent
+- Tier 2: short plan file → build → review gate → verify gate
+- **Fail-twice auto-promotion**: the same fix failing twice moves the task up a
+  tier automatically
+- **Verify before done at every tier**: run the checks, quote the evidence
+
+## Why
+
+Measured on a fixed golden-task harness, the reference process-heavy plugin
+costs 1.2–2.7× tokens and 1.45–1.8× turns versus bare Claude Code at identical
+correctness (33/33 hidden tests, all tiers). tempo keeps the safety disciplines
+where they pay and drops the flat tax everywhere else.
+
+- Spec: [prd-010 — Lean SDLC plugin](https://github.com/shrwnsan/vibekit-claude-plugins/blob/main/docs/plans/prd-010-lean-sdlc-plugin.md)
+- Measurement: [ceremony-cost eval harness](https://github.com/shrwnsan/vibekit-claude-plugins/tree/main/evals/ceremony)
+  and [tasks-005 baselines](https://github.com/shrwnsan/vibekit-claude-plugins/blob/main/docs/plans/tasks-005-tempo-ceremony-eval-harness.md)
+
+## Status
+
+v0.1.0 MVP — triage router, tier flows, session hook. Decision-model triage
+(calibrated providers, Jev-compatible) is planned; not required.
+
+License: Apache-2.0.
