@@ -39,7 +39,7 @@ baselines are medians of n=4–7):
 |---|---|---|---|
 | **0** trivial | 16 turns · 21.3k tok · 46s | 24 turns · 26.4k tok · 69s | **9–13 turns · 14.6–23.8k tok · 12–16s** |
 | **1** standard | 16.5 turns · 19.1k tok · 82s | 29 turns · 51k tok · 199s | **18–22 turns · 21–23.8k tok · 42–44s** |
-| **2** heavy | 28 turns · 51.4k tok · 397s | 40.5 turns · 60.9k tok · 308s | **24–49 turns · 33.1–35.4k tok · 67–223s** |
+| **2** risky | 28 turns · 51.4k tok · 397s | 40.5 turns · 60.9k tok · 308s | **24–49 turns · 33.1–35.4k tok · 67–223s** |
 
 Hidden tests: 6/6 tempo, 33/33 baseline runs. Tier 0 at/below the bare floor;
 tier 1 at bare cost with the safety net (44% of superpowers' tokens); tier 2
