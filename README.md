@@ -27,13 +27,14 @@ claude plugin install https://github.com/shrwnsan/vibekit-claude-plugins
 
 ## Why
 
-Measured on a fixed golden-task harness, the reference process-heavy plugin
-(superpowers) costs **1.2–2.7× tokens and 1.45–1.8× turns** versus bare Claude
-Code at identical correctness (33/33 hidden tests, all tiers). tempo keeps the
-safety disciplines where they pay and drops the flat tax everywhere else.
+On a fixed golden-task harness, the reference process-heavy plugin
+(superpowers) cost 1.2–2.7× tokens and 1.45–1.8× turns more than bare Claude
+Code at identical correctness, on every tier (33/33 hidden tests in both
+conditions). tempo keeps the safety disciplines where they pay and drops the
+flat tax everywhere else.
 
-First MVP smoke (same harness, same backend, n=1 per task — directional;
-baselines are medians of n=4–7):
+First smoke of the MVP, same harness and backend, one run per task
+(directional; baseline numbers are medians of 4–7 runs):
 
 | Tier | bare | superpowers | tempo (smoke) |
 |---|---|---|---|
@@ -41,9 +42,10 @@ baselines are medians of n=4–7):
 | **1** standard | 16.5 turns · 19.1k tok · 82s | 29 turns · 51k tok · 199s | **18–22 turns · 21–23.8k tok · 42–44s** |
 | **2** risky | 28 turns · 51.4k tok · 397s | 40.5 turns · 60.9k tok · 308s | **24–49 turns · 33.1–35.4k tok · 67–223s** |
 
-Hidden tests: 6/6 tempo, 33/33 baseline runs. Tier 0 at/below the bare floor;
-tier 1 at bare cost with the safety net (44% of superpowers' tokens); tier 2
-at 0.67× bare tokens with the plan file and review gate included.
+Hidden tests passed in all runs (6/6 tempo, 33/33 baseline). Tier 0 landed at
+or below the bare floor, tier 1 at bare cost with the safety net (44% of
+superpowers' tokens), tier 2 at 0.67× bare tokens including the plan file and
+review gate.
 
 - Spec: [prd-010 — Lean SDLC plugin](https://github.com/shrwnsan/vibekit-claude-plugins/blob/main/docs/plans/prd-010-lean-sdlc-plugin.md)
 - Measurement: [ceremony-cost eval harness](https://github.com/shrwnsan/vibekit-claude-plugins/tree/main/evals/ceremony)
@@ -51,7 +53,7 @@ at 0.67× bare tokens with the plan file and review gate included.
 
 ## Status
 
-v0.1.0 MVP — triage router, tier flows, session hook. Decision-model triage
-(calibrated providers, Jev-compatible) is planned; not required.
+v0.1.0 MVP: triage router, tier flows, session hook. Decision-model triage
+(calibrated providers, Jev-compatible) is planned but not required.
 
 License: Apache-2.0.
