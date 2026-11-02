@@ -33,19 +33,22 @@ Code at identical correctness, on every tier (33/33 hidden tests in both
 conditions). tempo keeps the safety disciplines where they pay and drops the
 flat tax everywhere else.
 
-First smoke of the MVP, same harness and backend, one run per task
-(directional; baseline numbers are medians of 4–7 runs):
+Latest benchmark, same harness and backend, medians of 3 runs per task (bare
+re-based on the same CLI; superpowers is the October baseline):
 
-| Tier | bare | superpowers | tempo (smoke) |
+| Tier | bare | superpowers | tempo |
 |---|---|---|---|
-| **0** trivial | 16 turns · 21.3k tok · 46s | 24 turns · 26.4k tok · 69s | **9–13 turns · 14.6–23.8k tok · 12–16s** |
-| **1** standard | 16.5 turns · 19.1k tok · 82s | 29 turns · 51k tok · 199s | **18–22 turns · 21–23.8k tok · 42–44s** |
-| **2** risky | 28 turns · 51.4k tok · 397s | 40.5 turns · 60.9k tok · 308s | **24–49 turns · 33.1–35.4k tok · 67–223s** |
+| **0** trivial | 16.5 turns · 16.2k tok · 37s | 24 turns · 26.4k tok · 69s | **16 turns · 24.8k tok · 30s** |
+| **1** standard | 17 turns · 16.6k tok · 81s | 29 turns · 51k tok · 199s | **25.5 turns · 31.6k tok · 106s** |
+| **2** risky | 24.5 turns · 44.1k tok · 196s | 40.5 turns · 60.9k tok · 308s | **25 turns · 29.1k tok · 189s** |
 
-Hidden tests passed in all runs (6/6 tempo, 33/33 baseline). Tier 0 landed at
-or below the bare floor, tier 1 at bare cost with the safety net (44% of
-superpowers' tokens), tier 2 at 0.67× bare tokens including the plan file and
-review gate.
+Hidden tests passed in every run recorded (75/75 across baselines, smoke, and
+reruns). Tier 2 beat bare outright: 0.66× tokens at parity turns and
+wall-clock. Tier 0 held the bare floor on turns and wall-clock. Tier 1 sits
+between bare and superpowers: about 62% of superpowers' tokens with the
+safety net included, and the session forensics show that cost is the
+disciplines themselves (test-first, plan note, full verify), not skill
+content.
 
 - Spec: [prd-010 — Lean SDLC plugin](https://github.com/shrwnsan/vibekit-claude-plugins/blob/main/docs/plans/prd-010-lean-sdlc-plugin.md)
 - Measurement: [ceremony-cost eval harness](https://github.com/shrwnsan/vibekit-claude-plugins/tree/main/evals/ceremony)
