@@ -9,6 +9,18 @@ plugin is developed and released through the
 — canonical source:
 [`plugins/tempo`](https://github.com/shrwnsan/vibekit-claude-plugins/tree/main/plugins/tempo).
 
+## Results at a glance
+
+On the fixed benchmark harness (medians of 3 runs per task, every task passed
+hidden verification):
+
+- **Risky changes**: 34% fewer tokens than bare Claude Code, with the plan
+  file and review gate included
+- **Trivial changes**: fewer turns and faster wall-clock than bare
+- **Standard changes**: test-first plus full verification costs about 1.9×
+  bare, roughly 38% cheaper than the process-heavy reference plugin
+- 75 of 75 tasks passed hidden verification across every benchmark run
+
 ## Install
 
 ```
