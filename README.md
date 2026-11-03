@@ -36,6 +36,9 @@ claude plugin install https://github.com/shrwnsan/vibekit-claude-plugins
 - **Fail-twice auto-promotion**: the same fix failing twice moves the task up a
   tier automatically
 - **Verify before done at every tier**: run the checks, quote the evidence
+- **Portable skills**: the four skills are Agent Skills compliant — they work
+  in Pi and Amp via shared skill directories (routing hook stays
+  Claude Code-only)
 
 ## Why
 
