@@ -68,7 +68,10 @@ content.
 
 ## Status
 
-v0.1.0 MVP: triage router, tier flows, session hook. Decision-model triage
-(calibrated providers, Jev-compatible) is planned but not required.
+v0.1.0 MVP: triage router, tier flows, session hook. Ships dual manifests —
+Claude Code plugin and [Agent Plugins](https://agent-plugins.org/) v1.0.0
+package; skills conform to the [Agent Skills specification](https://agentskills.io/).
+Decision-model triage (calibrated providers, Jev-compatible) is planned but
+not required.
 
 License: Apache-2.0.
