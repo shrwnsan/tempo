@@ -18,7 +18,8 @@ hidden verification):
   file and review gate included
 - **Trivial changes**: fewer turns and faster wall-clock than bare
 - **Standard changes**: test-first plus full verification costs about 1.9×
-  bare, roughly 38% cheaper than the process-heavy reference plugin
+  bare — and on the same-CLI comparison comes in slightly under the
+  process-heavy reference plugin (0.79× its tokens, 0.91× its turns)
 - 75 of 75 tasks passed hidden verification across every benchmark run
 
 ## Install
